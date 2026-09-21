@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="270" viewBox="0 0 900 270" role="img" aria-label="Dmitriy — Fullstack developer">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0f1f"/>
+      <stop offset="1" stop-color="#121a36"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00ADD8"/>
+      <stop offset="0.5" stop-color="#7B61FF"/>
+      <stop offset="1" stop-color="#FF6AD5"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-0.5 0; 0.5 0; -0.5 0" dur="8s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00ADD8" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#7B61FF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#FF6AD5" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <clipPath id="win">
+      <rect x="10" y="10" width="880" height="250" rx="16"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .mono { font-family: 'JetBrains Mono', 'Fira Code', Consolas, Menlo, 'DejaVu Sans Mono', monospace; }
+    .dim { fill: #6b7a99; font-size: 15px; }
+    .prompt { fill: #3ddc97; }
+    .name { font-size: 58px; font-weight: 700; letter-spacing: 1px; }
+    .type { fill: #e6edf3; font-size: 20px; opacity: 0; animation: type 24s infinite; }
+    .cur { fill: #00ADD8; animation: blink 0.8s steps(1) infinite; }
+    .t2 { animation-delay: 4s; }  .t3 { animation-delay: 8s; }
+    .t4 { animation-delay: 12s; } .t5 { animation-delay: 16s; }
+    .t6 { animation-delay: 20s; }
+    @keyframes type {
+      0%     { opacity: 1; clip-path: inset(0 100% 0 0); animation-timing-function: steps(30, end); }
+      5%     { opacity: 1; clip-path: inset(0 0 0 0); }
+      14%    { opacity: 1; clip-path: inset(0 0 0 0); animation-timing-function: steps(12, end); }
+      16.5%  { opacity: 1; clip-path: inset(0 100% 0 0); }
+      16.6%, 100% { opacity: 0; }
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+    .lbl { fill: #9aa7c2; font-size: 14px; }
+    .track { fill: #1c2547; }
+    .bar { transform-box: fill-box; transform-origin: left center; animation: grow 1.6s cubic-bezier(.2,.8,.2,1) both; }
+    .b2 { animation-delay: .2s; } .b3 { animation-delay: .4s; } .b4 { animation-delay: .6s; }
+    @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  </style>
+
+  <!-- window -->
+  <rect x="10" y="10" width="880" height="250" rx="16" fill="url(#bg)"/>
+  <g clip-path="url(#win)" opacity="0.55">
+    <circle cx="160" cy="250" r="110" fill="#00ADD8" filter="url(#blur)">
+      <animate attributeName="cx" values="160;360;160" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="760" cy="30" r="120" fill="#7B61FF" filter="url(#blur)">
+      <animate attributeName="cx" values="760;560;760" dur="18s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <rect x="10.5" y="10.5" width="879" height="249" rx="16" fill="none" stroke="url(#border)" stroke-width="1.5"/>
+
+  <!-- title bar -->
+  <circle cx="38" cy="36" r="6" fill="#ff5f57"/>
+  <circle cx="58" cy="36" r="6" fill="#febc2e"/>
+  <circle cx="78" cy="36" r="6" fill="#28c840"/>
+  <text x="450" y="41" text-anchor="middle" class="mono dim">~/1abobik1 — zsh</text>
+  <line x1="10" y1="56" x2="890" y2="56" stroke="#1f2a4d"/>
+
+  <!-- left: terminal -->
+  <text x="44" y="92" class="mono dim"><tspan class="prompt">$</tspan> whoami</text>
+  <text x="40" y="152" class="mono name" fill="url(#accent)">Dmitriy</text>
+  <text x="44" y="190" class="mono dim"><tspan class="prompt">$</tspan> cat role.txt</text>
+
+  <g class="mono">
+    <text x="44" y="226" class="type t1">› Fullstack developer<tspan class="cur">▍</tspan></text>
+    <text x="44" y="226" class="type t2">› Fullstack-разработчик<tspan class="cur">▍</tspan></text>
+    <text x="44" y="226" class="type t3">› Go · C++ · Python · TypeScript<tspan class="cur">▍</tspan></text>
+    <text x="44" y="226" class="type t4">› Backend: highload &amp; distributed systems<tspan class="cur">▍</tspan></text>
+    <text x="44" y="226" class="type t5">› Бэкенд, фронтенд, криптография, CV<tspan class="cur">▍</tspan></text>
+    <text x="44" y="226" class="type t6">› Frontend: React + TypeScript<tspan class="cur">▍</tspan></text>
+  </g>
+
+  <!-- right: language bars -->
+  <line x1="590" y1="76" x2="590" y2="236" stroke="#1f2a4d"/>
+  <g class="mono">
+    <text x="620" y="92" class="dim">stack --top</text>
+
+    <text x="620" y="124" class="lbl">Go</text>
+    <rect x="720" y="114" width="140" height="10" rx="5" class="track"/>
+    <rect x="720" y="114" width="140" height="10" rx="5" fill="#00ADD8" class="bar"/>
+
+    <text x="620" y="154" class="lbl">TypeScript</text>
+    <rect x="720" y="144" width="140" height="10" rx="5" class="track"/>
+    <rect x="720" y="144" width="104" height="10" rx="5" fill="#3178C6" class="bar b2"/>
+
+    <text x="620" y="184" class="lbl">C++</text>
+    <rect x="720" y="174" width="140" height="10" rx="5" class="track"/>
+    <rect x="720" y="174" width="100" height="10" rx="5" fill="#7B61FF" class="bar b3"/>
+
+    <text x="620" y="214" class="lbl">Python</text>
+    <rect x="720" y="204" width="140" height="10" rx="5" class="track"/>
+    <rect x="720" y="204" width="92" height="10" rx="5" fill="#FFD43B" class="bar b4"/>
+  </g>
+</svg>
